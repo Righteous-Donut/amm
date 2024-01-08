@@ -137,7 +137,7 @@ async function main() {
   transaction = await usd.connect(investor4).approve(amm.address, tokens(10))
   await transaction.wait()
 
-  // Investor swaps 5 tokena
+  // Investor swaps 5 tokens
   transaction = await amm.connect(investor4).swapToken2(tokens(5))
   await transaction.wait()
 
