@@ -15,7 +15,7 @@ async function main() {
   console.log(`Dapp Token deployed to: ${dapp.address}\n`)
 
   // Deploy Token 2
-  const usd = await Token.deploy('Dapp Token', 'DAPP', '1000000') // 1 million tokens
+  const usd = await Token.deploy('USD Token', 'USD', '1000000') // 1 million tokens
   await usd.deployed()
   console.log(`USD Token deployed to: ${usd.address}\n`)
 
