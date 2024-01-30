@@ -14,7 +14,7 @@ import Alert from './Alert'
 
 import { 
   swap, 
-  loadBalances 
+  loadBalances
 } from '../store/interactions'
 
 const Swap = () => {
@@ -191,7 +191,7 @@ const Swap = () => {
               {isSwapping ? (
                 <Spinner animation="border" style={{ display: 'block', margin: '0 auto' }} />
               ): (
-                <Button type='submit'>Swap</Button>
+                <Button type="submit">Swap</Button>
               )}
               
               <Form.Text muted>
