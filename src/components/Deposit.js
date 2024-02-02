@@ -31,7 +31,6 @@ const Deposit = () => {
   const isDepositing = useSelector(state => state.amm.depositing.isDepositing)
   const isSuccess = useSelector(state => state.amm.depositing.isSuccess)
   const transactionHash = useSelector(state => state.amm.depositing.transactionHash)
-
   const dispatch = useDispatch()
 
   const amountHandler = async (e) => {
