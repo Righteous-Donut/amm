@@ -15,6 +15,7 @@ import {
 import { 
 	setContract,
 	sharesLoaded,
+	swapsLoaded,
 	depositRequest,
 	depositSuccess,
 	depositFail,
@@ -164,5 +165,24 @@ export const swap = async (provider, amm, token, symbol, amount, dispatch) => {
 	}
 
 }
+
+// --------------------------------------------------
+// LOAD ALL SWAPS
+
+export const loadAllSwaps = async (provider, amm, dispatch) => {
+
+	// Fetch swaps from Blockchain
+
+	const block = await provider.getBlockNumber()
+
+	const swapStream = await amm.queryFilter('Swap', 0, block)
+	const swaps = swapStream.map(event => {
+		return { hash: event.transactionHash, args: event.args}
+	})
+
+	dispatch(swapsLoaded(swaps))
+
+}
+
 
 
